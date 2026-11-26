@@ -1,0 +1,13 @@
+#header img { 
+    width: 100px; 
+    height: auto; 
+    background-color: #a25151; 
+    border-radius: 50%; 
+    margin: 10px;
+    cursor: pointer; 
+}
+
+#header {/*
+    background-color: #090808;
+    height: 70px; width:100%; */
+}
