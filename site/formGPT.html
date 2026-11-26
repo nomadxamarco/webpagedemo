@@ -1,0 +1,2187 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Photography Booking | NXA</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="NomadxAmarco's photography portfolio and services" />
+    	<meta name="keywords" content="canon, photography, new york, creative, haitian, city, picture, art" />
+	    <meta name="robots" content="nofollow" />
+	    <meta http-equiv="author" content="Nomad x Amarco" />
+	    <meta http-equiv="pragma" content="no-cache" />
+	    <meta http-equiv="expires" content="Fri, 04 Apr 2034 23:59:59 GMT" />
+    </head>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f5f5;
+            color: #111;
+        }
+
+        .booking-form {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+        }
+
+        h1 {
+            margin-top: 0;
+            font-size: 32px;
+        }
+
+        h2 {
+            margin-top: 0;
+            font-size: 22px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+        .intro {
+            margin-bottom: 35px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 22px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #bbb;
+            border-radius: 4px;
+            font-size: 16px;
+            font-family: inherit;
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #111;
+        }
+
+        .checkbox-group,
+        .radio-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .checkbox-group label,
+        .radio-group label {
+            font-weight: normal;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .checkbox-group input,
+        .radio-group input {
+            width: auto;
+        }
+
+        .conditional {
+            display: none;
+            margin-top: 25px;
+            padding: 25px;
+            background: #f8f8f8;
+            border-left: 3px solid #111;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 16px;
+            background: #111;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 17px;
+            cursor: pointer;
+        }
+
+        .submit-button:hover {
+            background: #333;
+        }
+
+        .required {
+            color: #b00020;
+        }
+
+        .small-text {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 600px) {
+            .booking-form {
+                padding: 25px;
+            }
+
+            body {
+                padding: 20px 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <center><a href="/index.html">HOMExPAGE</a> | <a href="/site/city.html">CITYxPAGE</a> | <a href="/site/equiptment.html">EQUPTMENTxPAGE</a> | <a href="/site/price.html">PRICExPAGE</a> | <a href="/site/about.html">ABOUTxME</a></center>
+
+<div class="booking-form">
+
+    <h1>Photography Session Inquiry</h1>
+
+    <p class="intro">
+        Tell me about your photography needs, vision, and expectations.
+        I'll review your inquiry and contact you regarding availability,
+        pricing, and next steps.
+    </p>
+
+    <form action="#" method="POST">
+
+        <!-- ========================================= -->
+        <!-- CLIENT INFORMATION -->
+        <!-- ========================================= -->
+
+        <div class="section">
+
+            <h2>1. Your Information</h2>
+
+            <div class="form-group">
+                <label for="fullName">
+                    Full Name <span class="required">*</span>
+                </label>
+
+                <input
+                    type="text"
+                    id="fullName"
+                    name="full_name"
+                    required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">
+                    Email Address <span class="required">*</span>
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">
+                    Phone Number
+                </label>
+
+                <input
+                    type="tel"
+                    id="phone"
+                    name="phone">
+            </div>
+
+            <div class="form-group">
+                <label for="contactMethod">
+                    Preferred Method of Contact
+                </label>
+
+                <select id="contactMethod" name="contact_method">
+
+                    <option value="">Select one</option>
+                    <option value="email">Email</option>
+                    <option value="phone">Phone</option>
+                    <option value="text">Text</option>
+
+                </select>
+            </div>
+
+        </div>
+
+
+        <!-- ========================================= -->
+        <!-- PHOTOGRAPHY TYPE -->
+        <!-- ========================================= -->
+
+        <div class="section">
+
+            <h2>2. What Are You Booking?</h2>
+
+            <div class="form-group">
+
+                <label for="shootType">
+                    Photography Type <span class="required">*</span>
+                </label>
+
+                <select
+                    id="shootType"
+                    name="shoot_type"
+                    required
+                    onchange="showShootSection()">
+
+                    <option value="">Select one</option>
+
+                    <option value="portrait">Individual / Portrait</option>
+                    <option value="couples">Couples</option>
+                    <option value="engagement">Engagement</option>
+                    <option value="wedding">Wedding</option>
+                    <option value="family">Family</option>
+                    <option value="maternity">Maternity</option>
+                    <option value="newborn">Newborn</option>
+                    <option value="graduation">Graduation</option>
+                    <option value="birthday">Birthday</option>
+                    <option value="anniversary">Anniversary</option>
+                    <option value="holiday">Holiday</option>
+                    <option value="headshots">Headshots</option>
+                    <option value="fashion">Fashion / Modeling</option>
+                    <option value="lifestyle">Lifestyle</option>
+                    <option value="sports">Sports</option>
+                    <option value="event">Event</option>
+                    <option value="corporate">Corporate / Company</option>
+                    <option value="brand">Brand Photography</option>
+                    <option value="product">Product Photography</option>
+                    <option value="realestate">Real Estate</option>
+                    <option value="automotive">Automotive</option>
+                    <option value="creative">Creative / Editorial</option>
+                    <option value="concert">Concert / Performance</option>
+                    <option value="other">Other</option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <!-- ========================================= -->
+        <!-- GENERAL SESSION INFORMATION -->
+        <!-- ========================================= -->
+
+        <div class="section">
+
+            <h2>3. Session Details</h2>
+
+            <div class="form-group">
+
+                <label for="purpose">
+                    What is the purpose of the shoot?
+                </label>
+
+                <textarea
+                    id="purpose"
+                    name="purpose"
+                    placeholder="Tell me what you are looking to accomplish with this shoot."></textarea>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="vision">
+                    Describe Your Vision
+                </label>
+
+                <textarea
+                    id="vision"
+                    name="vision"
+                    placeholder="Describe the look, feel, story, or concept you have in mind."></textarea>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Preferred Style / Aesthetic
+                </label>
+
+                <div class="checkbox-group">
+
+                    <label>
+                        <input type="checkbox" name="style[]" value="clean">
+                        Clean
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="style[]" value="minimal">
+                        Minimal
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="style[]" value="luxury">
+                        Luxury
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="style[]" value="editorial">
+                        Editorial
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="style[]" value="cinematic">
+                        Cinematic
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="style[]" value="romantic">
+                        Romantic
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="style[]" value="casual">
+                        Casual
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="style[]" value="moody">
+                        Dark / Moody
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="style[]" value="vibrant">
+                        Vibrant
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="style[]" value="vintage">
+                        Vintage
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="style[]" value="street">
+                        Street
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="style[]" value="natural">
+                        Natural
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="references">
+                    Do you have reference images or a mood board?
+                </label>
+
+                <textarea
+                    id="references"
+                    name="references"
+                    placeholder="Paste a link to your Pinterest board, Google Drive folder, Instagram post, etc."></textarea>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="people">
+                    Number of People Being Photographed
+                </label>
+
+                <input
+                    type="number"
+                    id="people"
+                    name="number_of_people"
+                    min="1">
+
+            </div>
+
+        </div>
+
+
+        <!-- ========================================= -->
+        <!-- DATE & LOCATION -->
+        <!-- ========================================= -->
+
+        <div class="section">
+
+            <h2>4. Date & Location</h2>
+
+            <div class="form-group">
+
+                <label for="shootDate">
+                    Preferred Date <span class="required">*</span>
+                </label>
+
+                <input
+                    type="date"
+                    id="shootDate"
+                    name="shoot_date"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="shootTime">
+                    Preferred Start Time
+                </label>
+
+                <input
+                    type="time"
+                    id="shootTime"
+                    name="shoot_time">
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Are you flexible with the date?
+                </label>
+
+                <div class="radio-group">
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="date_flexible"
+                            value="yes">
+                        Yes
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="date_flexible"
+                            value="no">
+                        No
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="location">
+                    Preferred Location
+                </label>
+
+                <input
+                    type="text"
+                    id="location"
+                    name="location"
+                    placeholder="City, venue, studio, park, etc.">
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Would you like me to recommend a location?
+                </label>
+
+                <div class="radio-group">
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="location_help"
+                            value="yes">
+                        Yes
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="location_help"
+                            value="no">
+                        No
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="duration">
+                    Expected Session Length
+                </label>
+
+                <select id="duration" name="duration">
+
+                    <option value="">Select one</option>
+                    <option value="30min">30 Minutes</option>
+                    <option value="1hour">1 Hour</option>
+                    <option value="2hours">2 Hours</option>
+                    <option value="3hours">3+ Hours</option>
+                    <option value="unknown">Not Sure</option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <!-- ========================================= -->
+        <!-- PORTRAIT -->
+        <!-- ========================================= -->
+
+        <div id="portraitSection" class="conditional">
+
+            <h2>Portrait Session</h2>
+
+            <div class="form-group">
+
+                <label>Type of Portrait</label>
+
+                <select name="portrait_type">
+
+                    <option value="">Select one</option>
+                    <option>Personal</option>
+                    <option>Fashion</option>
+                    <option>Lifestyle</option>
+                    <option>Graduation</option>
+                    <option>Birthday</option>
+                    <option>Modeling</option>
+                    <option>Professional</option>
+                    <option>Creative</option>
+                    <option>Social Media</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="outfits">
+                    Number of Outfits
+                </label>
+
+                <input
+                    type="number"
+                    id="outfits"
+                    name="number_of_outfits"
+                    min="1">
+
+            </div>
+
+        </div>
+
+
+        <!-- ========================================= -->
+        <!-- COUPLES -->
+        <!-- ========================================= -->
+
+        <div id="couplesSection" class="conditional">
+
+            <h2>Couples Session</h2>
+
+            <div class="form-group">
+
+                <label for="partnerName">
+                    Partner's Name
+                </label>
+
+                <input
+                    type="text"
+                    id="partnerName"
+                    name="partner_name">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Type of Session</label>
+
+                <select name="couples_session_type">
+
+                    <option value="">Select one</option>
+                    <option>Date</option>
+                    <option>Anniversary</option>
+                    <option>Engagement</option>
+                    <option>Proposal</option>
+                    <option>Wedding</option>
+                    <option>Just Because</option>
+
+                </select>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="couplesConcept">
+                    Is there a specific story or concept you want represented?
+                </label>
+
+                <textarea
+                    id="couplesConcept"
+                    name="couples_concept"></textarea>
+
+            </div>
+
+        </div>
+
+
+        <!-- ========================================= -->
+        <!-- FAMILY -->
+        <!-- ========================================= -->
+
+        <div id="familySection" class="conditional">
+
+            <h2>Family Session</h2>
+
+            <div class="form-group">
+
+                <label for="children">
+                    Names and Ages of Children
+                </label>
+
+                <textarea
+                    id="children"
+                    name="children"></textarea>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>
+                    Will pets be included?
+                </label>
+
+                <div class="radio-group">
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="pets"
+                            value="yes">
+                        Yes
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="pets"
+                            value="no">
+                        No
+                    </label>
+
+                </div>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="familyShots">
+                    Specific Family Combinations / Must-Have Photos
+                </label>
+
+                <textarea
+                    id="familyShots"
+                    name="family_shots"></textarea>
+
+            </div>
+
+        </div>
+
+
+        <!-- ========================================= -->
+        <!-- EVENT -->
+        <!-- ========================================= -->
+
+        <div id="eventSection" class="conditional">
+
+            <h2>Event Photography</h2>
+
+            <div class="form-group">
+
+                <label for="eventName">
+                    Event Name
+                </label>
+
+                <input
+                    type="text"
+                    id="eventName"
+                    name="event_name">
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="venue">
+                    Venue
+                </label>
+
+                <input
+                    type="text"
+                    id="venue"
+                    name="venue">
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="guestCount">
+                    Expected Number of Guests
+                </label>
+
+                <input
+                    type="number"
+                    id="guestCount"
+                    name="guest_count"
+                    min="1">
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="eventEnd">
+                    Event End Time
+                </label>
+
+                <input
+                    type="time"
+                    id="eventEnd"
+                    name="event_end_time">
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="importantMoments">
+                    Important Moments That Must Be Photographed
+                </label>
+
+                <textarea
+                    id="importantMoments"
+                    name="important_moments"></textarea>
+
+            </div>
+
+        </div>
+
+
+        <!-- ========================================= -->
+        <!-- WEDDING -->
+        <!-- ========================================= -->
+
+        <div id="weddingSection" class="conditional">
+
+            <h2>Wedding Photography</h2>
+
+            <div class="form-group">
+
+                <label for="partnerOne">
+                    Partner One
+                </label>
+
+                <input
+                    type="text"
+                    id="partnerOne"
+                    name="partner_one">
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="partnerTwo">
+                    Partner Two
+                </label>
+
+                <input
+                    type="text"
+                    id="partnerTwo"
+                    name="partner_two">
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="ceremonyLocation">
+                    Ceremony Location
+                </label>
+
+                <input
+                    type="text"
+                    id="ceremonyLocation"
+                    name="ceremony_location">
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="receptionLocation">
+                    Reception Location
+                </label>
+
+                <input
+                    type="text"
+                    id="receptionLocation"
+                    name="reception_location">
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="weddingGuests">
+                    Estimated Guest Count
+                </label>
+
+                <input
+                    type="number"
+                    id="weddingGuests"
+                    name="wedding_guest_count"
+                    min="1">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>
+                    Will you be doing a first look?
+                </label>
+
+                <div class="radio-group">
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="first_look"
+                            value="yes">
+                        Yes
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="first_look"
+                            value="no">
+                        No
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="first_look"
+                            value="undecided">
+                        Undecided
+                    </label>
+
+                </div>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="weddingMustHave">
+                    Must-Have Wedding Photos
+                </label>
+
+                <textarea
+                    id="weddingMustHave"
+                    name="wedding_must_have"></textarea>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="weddingTimeline">
+                    Wedding Timeline / Schedule
+                </label>
+
+                <textarea
+                    id="weddingTimeline"
+                    name="wedding_timeline"
+                    placeholder="You can provide a link to your timeline or describe it here."></textarea>
+
+            </div>
+
+        </div>
+
+
+        <!-- ========================================= -->
+        <!-- CORPORATE -->
+        <!-- ========================================= -->
+
+        <div id="corporateSection" class="conditional">
+
+            <h2>Corporate / Company Photography</h2>
+
+            <div class="form-group">
+
+                <label for="companyName">
+                    Company Name
+                </label>
+
+                <input
+                    type="text"
+                    id="companyName"
+                    name="company_name">
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="companyWebsite">
+                    Company Website
+                </label>
+
+                <input
+                    type="url"
+                    id="companyWebsite"
+                    name="company_website"
+                    placeholder="https://">
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="employees">
+                    Number of Employees Being Photographed
+                </label>
+
+                <input
+                    type="number"
+                    id="employees"
+                    name="employees"
+                    min="1">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Photography Needed</label>
+
+                <div class="checkbox-group">
+
+                    <label>
+                        <input type="checkbox" name="corporate_services[]" value="headshots">
+                        Headshots
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="corporate_services[]" value="team">
+                        Team Photos
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="corporate_services[]" value="office">
+                        Office Photography
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="corporate_services[]" value="event">
+                        Corporate Event
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="corporate_services[]" value="marketing">
+                        Marketing Content
+                    </label>
+
+                </div>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="brandGuidelines">
+                    Do you have brand guidelines?
+                </label>
+
+                <textarea
+                    id="brandGuidelines"
+                    name="brand_guidelines"></textarea>
+
+            </div>
+
+        </div>
+
+
+        <!-- ========================================= -->
+        <!-- BRAND -->
+        <!-- ========================================= -->
+
+        <div id="brandSection" class="conditional">
+
+            <h2>Brand Photography</h2>
+
+            <div class="form-group">
+
+                <label for="brandName">
+                    Brand Name
+                </label>
+
+                <input
+                    type="text"
+                    id="brandName"
+                    name="brand_name">
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="brandWebsite">
+                    Website
+                </label>
+
+                <input
+                    type="url"
+                    id="brandWebsite"
+                    name="brand_website"
+                    placeholder="https://">
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="brandSocial">
+                    Social Media
+                </label>
+
+                <input
+                    type="text"
+                    id="brandSocial"
+                    name="brand_social">
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="brandDescription">
+                    Describe Your Brand
+                </label>
+
+                <textarea
+                    id="brandDescription"
+                    name="brand_description"></textarea>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="targetAudience">
+                    Who Is Your Target Audience?
+                </label>
+
+                <textarea
+                    id="targetAudience"
+                    name="target_audience"></textarea>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="brandUse">
+                    Where Will The Images Be Used?
+                </label>
+
+                <div class="checkbox-group">
+
+                    <label>
+                        <input type="checkbox" name="brand_use[]" value="website">
+                        Website
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="brand_use[]" value="instagram">
+                        Instagram
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="brand_use[]" value="tiktok">
+                        TikTok
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="brand_use[]" value="advertising">
+                        Advertising
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="brand_use[]" value="print">
+                        Print
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="brand_use[]" value="packaging">
+                        Packaging
+                    </label>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ========================================= -->
+        <!-- PRODUCT -->
+        <!-- ========================================= -->
+
+        <div id="productSection" class="conditional">
+
+            <h2>Product Photography</h2>
+
+            <div class="form-group">
+
+                <label for="productDescription">
+                    What Products Need To Be Photographed?
+                </label>
+
+                <textarea
+                    id="productDescription"
+                    name="product_description"></textarea>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="productCount">
+                    Number of Products
+                </label>
+
+                <input
+                    type="number"
+                    id="productCount"
+                    name="product_count"
+                    min="1">
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="imagesPerProduct">
+                    Desired Images Per Product
+                </label>
+
+                <input
+                    type="number"
+                    id="imagesPerProduct"
+                    name="images_per_product"
+                    min="1">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Photography Style</label>
+
+                <div class="checkbox-group">
+
+                    <label>
+                        <input type="checkbox" name="product_style[]" value="white_background">
+                        White Background
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="product_style[]" value="lifestyle">
+                        Lifestyle
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="product_style[]" value="detail">
+                        Detail Shots
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="product_style[]" value="model">
+                        With Model
+                    </label>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ========================================= -->
+        <!-- HEADSHOTS -->
+        <!-- ========================================= -->
+
+        <div id="headshotsSection" class="conditional">
+
+            <h2>Headshots</h2>
+
+            <div class="form-group">
+
+                <label for="headshotPurpose">
+                    What Will The Headshots Be Used For?
+                </label>
+
+                <select
+                    id="headshotPurpose"
+                    name="headshot_purpose">
+
+                    <option value="">Select one</option>
+                    <option>LinkedIn</option>
+                    <option>Resume</option>
+                    <option>Company Website</option>
+                    <option>Business</option>
+                    <option>Acting</option>
+                    <option>Modeling</option>
+                    <option>Social Media</option>
+                    <option>Other</option>
+
+                </select>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="headshotCount">
+                    Number of People
+                </label>
+
+                <input
+                    type="number"
+                    id="headshotCount"
+                    name="headshot_count"
+                    min="1">
+
+            </div>
+
+        </div>
+
+
+        <!-- ========================================= -->
+        <!-- FASHION / MODELING -->
+        <!-- ========================================= -->
+
+        <div id="fashionSection" class="conditional">
+
+            <h2>Fashion / Modeling</h2>
+
+            <div class="form-group">
+
+                <label for="modelName">
+                    Model Name
+                </label>
+
+                <input
+                    type="text"
+                    id="modelName"
+                    name="model_name">
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="fashionConcept">
+                    Concept
+                </label>
+
+                <textarea
+                    id="fashionConcept"
+                    name="fashion_concept"></textarea>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="looks">
+                    Number of Looks / Outfits
+                </label>
+
+                <input
+                    type="number"
+                    id="looks"
+                    name="number_of_looks"
+                    min="1">
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="mua">
+                    Makeup / Hair / Styling Information
+                </label>
+
+                <textarea
+                    id="mua"
+                    name="styling_information"></textarea>
+
+            </div>
+
+        </div>
+
+
+        <!-- ========================================= -->
+        <!-- AUTOMOTIVE -->
+        <!-- ========================================= -->
+
+        <div id="automotiveSection" class="conditional">
+
+            <h2>Automotive Photography</h2>
+
+            <div class="form-group">
+
+                <label for="vehicle">
+                    Vehicle Make / Model / Year
+                </label>
+
+                <input
+                    type="text"
+                    id="vehicle"
+                    name="vehicle">
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="vehiclePurpose">
+                    Purpose of Shoot
+                </label>
+
+                <textarea
+                    id="vehiclePurpose"
+                    name="vehicle_purpose"></textarea>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>
+                    Desired Coverage
+                </label>
+
+                <div class="checkbox-group">
+
+                    <label>
+                        <input type="checkbox" name="vehicle_coverage[]" value="exterior">
+                        Exterior
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="vehicle_coverage[]" value="interior">
+                        Interior
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="vehicle_coverage[]" value="details">
+                        Detail Shots
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="vehicle_coverage[]" value="rolling">
+                        Rolling Shots
+                    </label>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ========================================= -->
+        <!-- REAL ESTATE -->
+        <!-- ========================================= -->
+
+        <div id="realestateSection" class="conditional">
+
+            <h2>Real Estate Photography</h2>
+
+            <div class="form-group">
+
+                <label for="propertyAddress">
+                    Property Address
+                </label>
+
+                <input
+                    type="text"
+                    id="propertyAddress"
+                    name="property_address">
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="propertyType">
+                    Property Type
+                </label>
+
+                <select
+                    id="propertyType"
+                    name="property_type">
+
+                    <option value="">Select one</option>
+                    <option>House</option>
+                    <option>Apartment</option>
+                    <option>Condo</option>
+                    <option>Commercial</option>
+                    <option>Land</option>
+                    <option>Other</option>
+
+                </select>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="squareFeet">
+                    Approximate Square Footage
+                </label>
+
+                <input
+                    type="number"
+                    id="squareFeet"
+                    name="square_feet">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>
+                    Additional Services
+                </label>
+
+                <div class="checkbox-group">
+
+                    <label>
+                        <input type="checkbox" name="realestate_services[]" value="interior">
+                        Interior
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="realestate_services[]" value="exterior">
+                        Exterior
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="realestate_services[]" value="twilight">
+                        Twilight
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="realestate_services[]" value="drone">
+                        Drone
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="realestate_services[]" value="video">
+                        Video
+                    </label>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ========================================= -->
+        <!-- CREATIVE -->
+        <!-- ========================================= -->
+
+        <div id="creativeSection" class="conditional">
+
+            <h2>Creative / Editorial</h2>
+
+            <div class="form-group">
+
+                <label for="creativeConcept">
+                    Describe Your Concept
+                </label>
+
+                <textarea
+                    id="creativeConcept"
+                    name="creative_concept"></textarea>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="creativeInspiration">
+                    What Inspired The Concept?
+                </label>
+
+                <textarea
+                    id="creativeInspiration"
+                    name="creative_inspiration"></textarea>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="creativeTeam">
+                    Other People Involved
+                </label>
+
+                <textarea
+                    id="creativeTeam"
+                    name="creative_team"
+                    placeholder="Models, makeup artists, designers, stylists, etc."></textarea>
+
+            </div>
+
+        </div>
+
+
+        <!-- ========================================= -->
+        <!-- HOLIDAY -->
+        <!-- ========================================= -->
+
+        <div id="holidaySection" class="conditional">
+
+            <h2>Holiday Session</h2>
+
+            <div class="form-group">
+
+                <label for="holidayType">
+                    Which Holiday?
+                </label>
+
+                <input
+                    type="text"
+                    id="holidayType"
+                    name="holiday_type"
+                    placeholder="Christmas, Halloween, Valentine's Day, etc.">
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="holidayTheme">
+                    Holiday Theme / Concept
+                </label>
+
+                <textarea
+                    id="holidayTheme"
+                    name="holiday_theme"></textarea>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>
+                    Will costumes, props, or decorations be used?
+                </label>
+
+                <div class="radio-group">
+
+                    <label>
+                        <input type="radio" name="holiday_props" value="yes">
+                        Yes
+                    </label>
+
+                    <label>
+                        <input type="radio" name="holiday_props" value="no">
+                        No
+                    </label>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ========================================= -->
+        <!-- IMAGE USAGE -->
+        <!-- ========================================= -->
+
+        <div class="section">
+
+            <h2>5. Image Usage</h2>
+
+            <div class="form-group">
+
+                <label>
+                    How will you use the photographs?
+                </label>
+
+                <div class="checkbox-group">
+
+                    <label>
+                        <input type="checkbox" name="image_use[]" value="personal">
+                        Personal Use
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="image_use[]" value="social">
+                        Social Media
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="image_use[]" value="website">
+                        Website
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="image_use[]" value="advertising">
+                        Advertising
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="image_use[]" value="print">
+                        Print
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="image_use[]" value="publication">
+                        Publication
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="image_use[]" value="commercial">
+                        Commercial Use
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Will the photographs promote a business, product, service,
+                    brand, or organization?
+                </label>
+
+                <div class="radio-group">
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="commercial"
+                            value="yes">
+                        Yes
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="commercial"
+                            value="no">
+                        No
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Do you require exclusive usage rights?
+                </label>
+
+                <div class="radio-group">
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="exclusive_rights"
+                            value="yes">
+                        Yes
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="exclusive_rights"
+                            value="no">
+                        No
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="exclusive_rights"
+                            value="unsure">
+                        Not Sure
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Do you require RAW / unedited files?
+                </label>
+
+                <div class="radio-group">
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="raw_files"
+                            value="yes">
+                        Yes
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="raw_files"
+                            value="no">
+                        No
+                    </label>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ========================================= -->
+        <!-- DELIVERY -->
+        <!-- ========================================= -->
+
+        <div class="section">
+
+            <h2>6. Final Images & Delivery</h2>
+
+            <div class="form-group">
+
+                <label for="imageCount">
+                    Approximate Number of Final Images Expected
+                </label>
+
+                <input
+                    type="number"
+                    id="imageCount"
+                    name="expected_images"
+                    min="1">
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Editing Required
+                </label>
+
+                <div class="checkbox-group">
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="editing[]" value="color">
+                        Color Correction
+                    </label>
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="editing[]" value="retouching">
+                        Standard Retouching
+                    </label>
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            name="editing[]" value="advanced">
+                        Advanced Retouching
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="deadline">
+                    Do You Have A Delivery Deadline?
+                </label>
+
+                <input
+                    type="date"
+                    id="deadline"
+                    name="delivery_deadline">
+
+            </div>
+
+        </div>
+
+
+        <!-- ========================================= -->
+        <!-- BUDGET -->
+        <!-- ========================================= -->
+
+        <div class="section">
+
+            <h2>7. Budget</h2>
+
+            <div class="form-group">
+
+                <label for="budget">
+                    Anticipated Photography Budget
+                </label>
+
+                <select id="budget" name="budget">
+
+                    <option value="">Select one</option>
+
+                    <option value="under250">
+                        Under $250
+                    </option>
+
+                    <option value="250-500">
+                        $250 – $500
+                    </option>
+
+                    <option value="500-1000">
+                        $500 – $1,000
+                    </option>
+
+                    <option value="1000-2500">
+                        $1,000 – $2,500
+                    </option>
+
+                    <option value="2500plus">
+                        $2,500+
+                    </option>
+
+                    <option value="unsure">
+                        I'm Not Sure Yet
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Are you interested in a customized package?
+                </label>
+
+                <div class="radio-group">
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="custom_package"
+                            value="yes">
+                        Yes
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="custom_package"
+                            value="no">
+                        No
+                    </label>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ========================================= -->
+        <!-- ADDITIONAL INFORMATION -->
+        <!-- ========================================= -->
+
+        <div class="section">
+
+            <h2>8. Additional Information</h2>
+
+            <div class="form-group">
+
+                <label for="expectations">
+                    What Are Your Expectations For This Shoot?
+                </label>
+
+                <textarea
+                    id="expectations"
+                    name="expectations"></textarea>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="concerns">
+                    Is There Anything You're Concerned About?
+                </label>
+
+                <textarea
+                    id="concerns"
+                    name="concerns"></textarea>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="mustHave">
+                    Are There Any Must-Have Photos?
+                </label>
+
+                <textarea
+                    id="mustHave"
+                    name="must_have"></textarea>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="additional">
+                    Anything Else You'd Like Me To Know?
+                </label>
+
+                <textarea
+                    id="additional"
+                    name="additional_information"></textarea>
+
+            </div>
+
+        </div>
+
+
+        <!-- ========================================= -->
+        <!-- AGREEMENT -->
+        <!-- ========================================= -->
+
+        <div class="section">
+
+            <h2>9. Before You Submit</h2>
+
+            <div class="form-group">
+
+                <label>
+
+                    <input
+                        type="checkbox"
+                        name="agreement_review"
+                        value="yes"
+                        required>
+
+                    I understand that submitting this form is an inquiry
+                    and does not automatically confirm or book my session.
+
+                    <span class="required">*</span>
+
+                </label>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+
+                    <input
+                        type="checkbox"
+                        name="contact_consent"
+                        value="yes"
+                        required>
+
+                    I consent to being contacted regarding this photography
+                    inquiry.
+
+                    <span class="required">*</span>
+
+                </label>
+
+            </div>
+
+            <p class="small-text">
+
+                A photography agreement/contract may be required before your
+                session is officially booked. Pricing, payment terms,
+                cancellation policies, image usage rights, licensing,
+                deliverables, and other applicable terms will be provided
+                separately.
+
+            </p>
+
+        </div>
+
+
+        <!-- ========================================= -->
+        <!-- SUBMIT -->
+        <!-- ========================================= -->
+
+        <button
+            type="submit"
+            class="submit-button">
+
+            Request Photography Session
+
+        </button>
+
+    </form>
+
+</div>
+
+
+<!-- ========================================= -->
+<!-- CONDITIONAL FORM JAVASCRIPT -->
+<!-- ========================================= -->
+
+<script>
+
+function showShootSection() {
+
+    // Hide all conditional sections
+
+    const sections = document.querySelectorAll(".conditional");
+
+    sections.forEach(function(section) {
+
+        section.style.display = "none";
+
+    });
+
+
+    // Get selected photography type
+
+    const type = document.getElementById("shootType").value;
+
+
+    // Show appropriate section
+
+    if (type === "portrait") {
+
+        document.getElementById("portraitSection").style.display = "block";
+
+    }
+
+    if (type === "couples" || type === "engagement") {
+
+        document.getElementById("couplesSection").style.display = "block";
+
+    }
+
+    if (
+        type === "family" ||
+        type === "maternity" ||
+        type === "newborn"
+    ) {
+
+        document.getElementById("familySection").style.display = "block";
+
+    }
+
+    if (
+        type === "event" ||
+        type === "birthday" ||
+        type === "anniversary" ||
+        type === "concert"
+    ) {
+
+        document.getElementById("eventSection").style.display = "block";
+
+    }
+
+    if (type === "wedding") {
+
+        document.getElementById("weddingSection").style.display = "block";
+
+    }
+
+    if (type === "corporate") {
+
+        document.getElementById("corporateSection").style.display = "block";
+
+    }
+
+    if (type === "brand") {
+
+        document.getElementById("brandSection").style.display = "block";
+
+    }
+
+    if (type === "product") {
+
+        document.getElementById("productSection").style.display = "block";
+
+    }
+
+    if (type === "headshots") {
+
+        document.getElementById("headshotsSection").style.display = "block";
+
+    }
+
+    if (type === "fashion") {
+
+        document.getElementById("fashionSection").style.display = "block";
+
+    }
+
+    if (type === "automotive") {
+
+        document.getElementById("automotiveSection").style.display = "block";
+
+    }
+
+    if (type === "realestate") {
+
+        document.getElementById("realestateSection").style.display = "block";
+
+    }
+
+    if (type === "creative") {
+
+        document.getElementById("creativeSection").style.display = "block";
+
+    }
+
+    if (type === "holiday") {
+
+        document.getElementById("holidaySection").style.display = "block";
+
+    }
+
+}
+
+</script>
+
+</body>
+<footer>
+    <center><audio controls autoplay src="audio/Never Change.mp3"></audio></center>
+    <center><a href="#top"><b>Back to Top</b></a></center>
+    <center><p>Copyright &#169; 2015-2024 NOMADxAMARCO &middot; NXA Creative &middot;Studio All Rights Reserved</p></center>
+</footer>
+</html>
